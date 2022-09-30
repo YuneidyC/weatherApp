@@ -1,0 +1,44 @@
+.daily {
+    min-width: 500px;
+    margin: 30px auto;
+}
+
+.daily--next-days {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 2rem;
+    margin: 20px 0 10px;
+    min-width: 500px;
+}
+
+.daily > div {
+    height: 2px;
+    background-color: darkgray;
+    width: 70%;
+    position: relative;
+    margin: 0 auto 30px;
+    min-width: 500px;
+}
+
+.daily--list {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.daily--list .day:first-child {
+    background: #313172;
+}
+
+.daily--day {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0 auto;
+}
