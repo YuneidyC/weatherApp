@@ -7,7 +7,7 @@ export const ListDays = () => {
     const data = useApi();
     let fiveDays = [];
 
-    if(!data) {
+    if (!data) {
         return <p>Loading...</p>
     }
 
@@ -18,18 +18,20 @@ export const ListDays = () => {
         const date = new Date((element.dt_txt).replace(" ", "T"));
         const arrayDate = new Date((fiveDays[fiveDays.length - 1].dt_txt).replace(" ", "T"));
 
-        if(arrayDate.getDay() !== date.getDay()) {
+        if (arrayDate.getDay() !== date.getDay()) {
             fiveDays.push(element);
         }
     }
-    
+
     return (
         <div className="daily">
             <p className="daily--next-days">Next Days</p>
             <div></div>
-            <ul className="daily--list">
-                {fiveDays.map((day, id) => <Day key={id} {...day} />)}
-            </ul>
+            <div className="daily--list__container">
+                <ul className="daily--list">
+                    {fiveDays.map((day, id) => <Day key={id} {...day} />)}
+                </ul>
+            </div>
         </div>
     )
 }

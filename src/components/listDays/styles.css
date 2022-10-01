@@ -12,7 +12,7 @@
     min-width: 500px;
 }
 
-.daily > div {
+.daily > div:first-child {
     height: 2px;
     background-color: darkgray;
     width: 70%;
@@ -21,13 +21,21 @@
     min-width: 500px;
 }
 
+.daily--list__container {
+    width: 95%;
+    background-color: #313172;
+    border-radius: 30px;
+    box-shadow: 0 7px 33px -1px rgba(0, 0, 0, 0.5);
+    min-width: 500px;
+    margin: 0 auto;
+}
+
 .daily--list {
     display: grid;
     align-items: center;
     justify-items: center;
     width: 100%;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
+    min-width: 500px;
 }
 
 .daily--list .day:first-child {
