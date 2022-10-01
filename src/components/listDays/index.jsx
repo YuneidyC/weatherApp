@@ -1,6 +1,7 @@
 import React from "react";
 import { Day } from "../Day";
 import { useApi } from "../../context/ApiContext";
+import ReactLoading from "react-loading";
 import './styles.css';
 
 export const ListDays = () => {
@@ -8,7 +9,16 @@ export const ListDays = () => {
     let fiveDays = [];
 
     if (!data) {
-        return <p>Loading...</p>
+        return (
+            <div className="loading--container">
+                <ReactLoading
+                    type="spinningBubbles"
+                    color="#58a4d5"
+                    height={50}
+                    width={50}
+                />
+            </div>
+        )
     }
 
     fiveDays.push(data.list[0]);

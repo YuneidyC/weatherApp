@@ -1,3 +1,10 @@
+.loading--container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
 .currentWeather {
     padding: 10px;
     border: 1px solid transparent;
