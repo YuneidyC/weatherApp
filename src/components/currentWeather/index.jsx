@@ -42,7 +42,7 @@ export const CurrentWeather = () => {
 
     function addZero(number) {
         if (number < 10) {
-            number = "0" + number; 
+            number = "0" + number;
         }
         return number;
     }
@@ -58,6 +58,10 @@ export const CurrentWeather = () => {
     return (
         <section className="currentWeather">
             <div className="currentWeather--nav">
+                <form className="currentWeather--nav-search" action="">
+                    <input className="currentWeather--nav-search__input" type="text" name="Search" id="search" placeholder="Search for a city" />
+                    <img className="currentWeather--nav-search__img" src="https://img.icons8.com/ios-glyphs/30/737373/search--v1.png" alt="search" />
+                </form>
                 <button onClick={darkTheme}>
                     <img className="toggle" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-toggle-user-interface-smashingstocks-glyph-smashing-stocks.png" alt="toggle dark" />
                 </button>
@@ -66,12 +70,12 @@ export const CurrentWeather = () => {
             <div className="currentWeather--details">
                 <div className="currentWeather--details__sun">
                     <div className="currentWeather--details__sun-sunrise">
-                    <img className="currentWeather--details__sun-sunrise__img" src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunrise-weather-tulpahn-flat-tulpahn.png" alt="sunrise"/>
-                    <span className="currentWeather--details__sun-sunrise__time">{sunrise}</span>
+                        <img className="currentWeather--details__sun-sunrise__img" src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunrise-weather-tulpahn-flat-tulpahn.png" alt="sunrise" />
+                        <span className="currentWeather--details__sun-sunrise__time">{sunrise}</span>
                     </div>
                     <div className="currentWeather--details__sun-sunset">
-                    <img className="currentWeather--details__sun-sunset__img" src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunset-weather-tulpahn-flat-tulpahn.png" alt="sunset" />
-                    <span className="currentWeather--details__sun-sunset__time">{sunset}</span>
+                        <img className="currentWeather--details__sun-sunset__img" src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunset-weather-tulpahn-flat-tulpahn.png" alt="sunset" />
+                        <span className="currentWeather--details__sun-sunset__time">{sunset}</span>
                     </div>
                 </div>
                 <div className="currentWeather--details__current">
