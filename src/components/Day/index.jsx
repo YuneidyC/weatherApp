@@ -3,7 +3,7 @@ import './styles.css';
 
 export const Day = ({ weather, main, dt_txt }) => {
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const monthName = ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
     const iconLink = "http://openweathermap.org/img/wn/" + weather[0].icon + '@2x.png';
 
     return (
