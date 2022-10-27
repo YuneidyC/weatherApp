@@ -1,3 +1,8 @@
+:root {
+  --light-mode: linear-gradient(to bottom right, #a6dae4, #58a4d5);
+  --dark-mode: linear-gradient(to bottom right, #020024, #26265e);
+}
+
 * {
   padding: 0;
   margin: 0;

@@ -1,25 +1,74 @@
 import React from "react";
 import "./styles.css";
-import { useApi } from "../../context/ApiContext";
-import { ListDays } from "../listDays";
+import { APIContext } from "../../context/ApiContext";
+import { ListDays } from "../ListDays";
+import { Toggle } from "../Toggle";
 import ReactLoading from "react-loading";
 
 export const CurrentWeather = () => {
-    const data = useApi();
+    const {
+        data,
+        toggled,
+        handleClick
+     } = React.useContext(APIContext);
+
     const weather = [];
 
     if (!data) {
-    return (
-        <div className="loading--container">
-            <ReactLoading
-                type="spinningBubbles"
-                color="#58a4d5"
-                height={50}
-                width={50}
-            />
-        </div>
-    );
+        return (
+            <div className="loading--container">
+                <ReactLoading
+                    type="spinningBubbles"
+                    color="#58a4d5"
+                    height={50}
+                    width={50}
+                />
+            </div>
+        );
     }
+
+    // function watchLocation() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.watchPosition(showPosition, handleError);
+    //     } else {
+    //         console.error("Geolocation is not supported by this browser.");
+    //     }
+    // }
+
+    // function handleError(error) {
+    //     let errorStr;
+    //     switch (error.code) {
+    //         case error.PERMISSION_DENIED:
+    //             errorStr = 'User denied the request for Geolocation.';
+    //             break;
+    //         case error.POSITION_UNAVAILABLE:
+    //             errorStr = 'Location information is unavailable.';
+    //             break;
+    //         case error.TIMEOUT:
+    //             errorStr = 'The request to get user location timed out.';
+    //             break;
+    //         case error.UNKNOWN_ERROR:
+    //             errorStr = 'An unknown error occurred.';
+    //             break;
+    //         default:
+    //             errorStr = 'An unknown error occurred.';
+    //     }
+    //     console.error('Error occurred: ' + errorStr);
+    // }
+
+    // function showPosition(position) {
+    //     console.log(`Latitude: ${position.coords.latitude}, longitude: ${position.coords.longitude}`);
+    // }
+
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(watchLocation, handleError);
+    // }
+
+    // fetch('https://ip.nf/me.json')
+    //     .then(response => response.json())
+    //     .then(ip => {
+    //         console.log(ip);
+    //     });
 
     function darkTheme() {
         let element = document.body;
@@ -83,92 +132,105 @@ export const CurrentWeather = () => {
         addZero(getSunset.getSeconds());
 
     return (
-        <section className="currentWeather">
-            <div className="currentWeather--nav">
-                <form className="currentWeather--nav-search" action="">
-                    <input
-                        className="currentWeather--nav-search__input"
-                        type="text"
-                        name="Search"
-                        id="search"
-                        placeholder="Search for a city"
-                    />
-                    <img
-                        className="currentWeather--nav-search__img"
-                        src="https://img.icons8.com/ios-glyphs/30/737373/search--v1.png"
-                        alt="search"
-                    />
-                </form>
-                <button onClick={darkTheme}>
-                    <img
-                        className="toggle"
-                        src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-toggle-user-interface-smashingstocks-glyph-smashing-stocks.png"
-                        alt="toggle dark"
-                    />
-                </button>
-                <h1>{data.city.name}</h1>
-            </div>
-            <div className="currentWeather--details">
-                <div className="currentWeather--details__sun">
-                    <div className="currentWeather--details__sun-sunrise">
-                        <img
-                            className="currentWeather--details__sun-sunrise__img"
-                            src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunrise-weather-tulpahn-flat-tulpahn.png"
-                            alt="sunrise"
+        <React.Fragment>
+            <section className="currentWeather">
+                <div className="currentWeather--nav">
+                    <form className="currentWeather--nav-search" action="">
+                        <input
+                            className="currentWeather--nav-search__input"
+                            type="text"
+                            name="Search"
+                            id="search"
+                            placeholder="Search for a city"
                         />
-                        <span className="currentWeather--details__sun-sunrise__time">
-                            {sunrise}
+                        <img
+                            className="currentWeather--nav-search__img"
+                            src="https://img.icons8.com/ios-glyphs/30/737373/search--v1.png"
+                            alt="search"
+                        />
+                    </form>
+                    <button onClick={darkTheme}>
+                        <img
+                            className="toggle"
+                            src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-toggle-user-interface-smashingstocks-glyph-smashing-stocks.png"
+                            alt="toggle dark"
+                        />
+                    </button>
+                    <Toggle toggled={toggled} onClick={handleClick}/>
+                    <h1>{data.city.name}</h1>
+                </div>
+                <div className="currentWeather--details">
+                    <div className="currentWeather--details__sun">
+                        <div className="currentWeather--details__sun-sunrise">
+                            <img
+                                className="currentWeather--details__sun-sunrise__img"
+                                src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunrise-weather-tulpahn-flat-tulpahn.png"
+                                alt="sunrise"
+                            />
+                            <span className="currentWeather--details__sun-sunrise__time">
+                                {sunrise}
+                            </span>
+                        </div>
+                        <div className="currentWeather--details__sun-sunset">
+                            <img
+                                className="currentWeather--details__sun-sunset__img"
+                                src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunset-weather-tulpahn-flat-tulpahn.png"
+                                alt="sunset"
+                            />
+                            <span className="currentWeather--details__sun-sunset__time">
+                                {sunset}
+                            </span>
+                        </div>
+                    </div>
+                    <div className="currentWeather--details__current">
+                        <span className="currentWeather--details__current-temp">
+                            {weather[0].main.temp}°
+                        </span>
+                        <span className="currentWeather--details__current-desc">
+                            {weather[0].weather[0].description}
                         </span>
                     </div>
-                    <div className="currentWeather--details__sun-sunset">
-                        <img
-                            className="currentWeather--details__sun-sunset__img"
-                            src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunset-weather-tulpahn-flat-tulpahn.png"
-                            alt="sunset"
-                        />
-                        <span className="currentWeather--details__sun-sunset__time">
-                            {sunset}
-                        </span>
+                    <ul className="currentWeather--stats">
+                        <li className="currentWeather--stats__feels-like">
+                            <span>Feels like</span>
+                            <span> {weather[0].main.feels_like}°</span>
+                        </li>
+                        <li className="currentWeather--stats__wind">
+                            <span>Wind </span>
+                            <img
+                                src="https://img.icons8.com/office/16/000000/wind--v1.png"
+                                alt="wind"
+                            />
+                            <span>{" " + weather[0].wind.speed} km/h</span>
+                        </li>
+                        <li className="currentWeather--stats__humidity">
+                            <span>Humidity</span>
+                            <span> {weather[0].main.humidity}%</span>
+                        </li>
+                    </ul>
+                    <div className="curreWeather--right">
+                        <div className="currentWeather--right__img">
+                            <img
+                                src={
+                                    "http://openweathermap.org/img/wn/" +
+                                    weather[0].weather[0].icon +
+                                    "@2x.png"
+                                }
+                                alt="Weather"
+                            />
+                        </div>
+                        <div className="currentWeather--temperature">
+                            <div className="currentWeather--temperature__high">
+                                <span>{weather[0].main.temp_max}°</span>
+                            </div>
+                            <div className="currentWeather--temperature__low">
+                                <span>{weather[0].main.temp_min}°</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="currentWeather--details__current">
-                    <span className="currentWeather--details__current-temp">
-                        {weather[0].main.temp}°
-                    </span>
-                    <span className="currentWeather--details__current-desc">
-                        {weather[0].weather[0].description}
-                    </span>
-                </div>
-                <ul className="currentWeather--stats">
-                    <li className="currentWeather--stats__feels-like">
-                        <span>Feels like</span>
-                        <span> {weather[0].main.feels_like}°</span>
-                    </li>
-                    <li className="currentWeather--stats__wind">
-                        <span>Wind </span>
-                        <img
-                            src="https://img.icons8.com/office/16/000000/wind--v1.png"
-                            alt="wind"
-                        />
-                        <span>{" " + weather[0].wind.speed} km/h</span>
-                    </li>
-                    <li className="currentWeather--stats__humidity">
-                        <span>Humidity</span>
-                        <span> {weather[0].main.humidity}%</span>
-                    </li>
-                </ul>
-                <div className="currentWeather--img">
-                    <img
-                        src={
-                            "http://openweathermap.org/img/wn/" +
-                            weather[0].weather[0].icon +
-                            "@2x.png"
-                        }
-                        alt="Weather"
-                    />
-                </div>
-            </div>
-            <ListDays />
-        </section>
+                <ListDays />
+            </section>
+        </React.Fragment>
     );
 };

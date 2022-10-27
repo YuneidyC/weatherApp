@@ -1,5 +1,5 @@
 import { ApiContextProvider } from "./context/ApiContext";
-import { CurrentWeather } from "./components/currentWeather"
+import { CurrentWeather } from "./components/CurrentWeather"
 
 function App() {
   return (
