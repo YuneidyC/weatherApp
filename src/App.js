@@ -1,24 +1,23 @@
-import React, { useState } from "react";
-import { useGeolocated } from "react-geolocated";
-import ReactLoading from "react-loading";
+import React, { useState } from 'react';
+import { useGeolocated } from 'react-geolocated';
+import ReactLoading from 'react-loading';
 
 import { UserWeather } from './components/UserWeather';
-import { DetailsWeather } from "./components/DetailsWeather";
-import { Day } from "./components/Day";
-import { ListDays } from "./components/listDays";
-import { CurrentWeather } from "./components/CurrentWeather";
+import { DetailsWeather } from './components/DetailsWeather';
+import { Day } from './components/Day';
+import { ListDays } from './components/listDays';
+import { CurrentWeather } from './components/CurrentWeather';
 
 function App() {
     const [weather, setWeather] = useState([]);
     const [data, setData] = useState('');
     const [fiveDays, setFiveDays] = useState([]);
-    const { coords, isGeolocationEnabled } =
-        useGeolocated({
-            positionOptions: {
-                enableHighAccuracy: false,
-            },
-            userDecisionTimeout: 5000,
-        });
+    const { coords, isGeolocationEnabled } = useGeolocated({
+        positionOptions: {
+            enableHighAccuracy: false,
+        },
+        userDecisionTimeout: 5000,
+    });
 
     return !isGeolocationEnabled ? (
         <CurrentWeather
@@ -26,24 +25,18 @@ function App() {
             setWeather={setWeather}
             data={data}
             setData={setData}
-            setFiveDays={setFiveDays}
-        >
+            setFiveDays={setFiveDays}>
             {weather.length && (
                 <div className="Weather-App">
                     <DetailsWeather
                         data={data}
-                        weather={weather}
-                    >
-                    </DetailsWeather>
+                        weather={weather}></DetailsWeather>
                     <ListDays
                         weather={weather}
                         fiveDays={fiveDays}
-                        setFiveDays={setFiveDays}
-                    >
+                        setFiveDays={setFiveDays}>
                         {fiveDays.map((day) => (
-                            <Day
-                                day={day}
-                            />
+                            <Day day={day} />
                         ))}
                     </ListDays>
                 </div>
@@ -57,24 +50,18 @@ function App() {
             setWeather={setWeather}
             data={data}
             setData={setData}
-            setFiveDays={setFiveDays}
-        >
+            setFiveDays={setFiveDays}>
             {weather.length && (
                 <div className="Weather-App">
                     <DetailsWeather
                         data={data}
-                        weather={weather}
-                    >
-                    </DetailsWeather>
+                        weather={weather}></DetailsWeather>
                     <ListDays
                         weather={weather}
                         fiveDays={fiveDays}
-                        setFiveDays={setFiveDays}
-                    >
+                        setFiveDays={setFiveDays}>
                         {fiveDays.map((day) => (
-                            <Day
-                                day={day}
-                            />
+                            <Day day={day} />
                         ))}
                     </ListDays>
                 </div>
@@ -88,8 +75,8 @@ function App() {
                 height={50}
                 width={50}
             />
-        </div >
-    )
-};
+        </div>
+    );
+}
 
 export default App;

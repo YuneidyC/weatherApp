@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { useState } from 'react';
 
 import './styles.css';
 
@@ -8,10 +8,14 @@ export const Search = (props) => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const cityAndCountryCode = (query.split(',')).map(str => str.replace(/\s/g, ''));
+        const cityAndCountryCode = query
+            .split(',')
+            .map((str) => str.replace(/\s/g, ''));
 
         if (query) {
-            const response = await fetch(`${process.env.REACT_APP_API}?q=${cityAndCountryCode[0]}, ${cityAndCountryCode[1]}&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
+            const response = await fetch(
+                `${process.env.REACT_APP_API}?q=${cityAndCountryCode[0]}, ${cityAndCountryCode[1]}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+            );
             if (response.status === 200) {
                 const newForecast = await response.json();
                 props.setData(newForecast);
@@ -24,7 +28,7 @@ export const Search = (props) => {
                 setError(true);
             }
         }
-    }
+    };
 
     return (
         <form action="" onSubmit={onSubmit} className="Search">
@@ -39,13 +43,13 @@ export const Search = (props) => {
                     <span></span>
                 </div>
                 {error && query.length <= 0 ? (
-                    <span
-                        className="currentWeather--nav-search__span"
-                    >
+                    <span className="currentWeather--nav-search__span">
                         {'Invalid input'}
                     </span>
-                ) : ('')}
+                ) : (
+                    ''
+                )}
             </div>
         </form>
     );
-}
+};

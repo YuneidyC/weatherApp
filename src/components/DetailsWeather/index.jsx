@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
@@ -9,25 +9,27 @@ export function DetailsWeather(props) {
     useEffect(() => {
         function addZero(number) {
             if (number < 10) {
-                number = "0" + number;
+                number = '0' + number;
             }
             return number;
         }
         let getSunrise = new Date(props.data.city.sunrise * 1000);
         setSunrise(
             addZero(getSunrise.getHours()) +
-            ":" +
-            addZero(getSunrise.getMinutes()) +
-            ":" +
-            addZero(getSunrise.getSeconds()));
+                ':' +
+                addZero(getSunrise.getMinutes()) +
+                ':' +
+                addZero(getSunrise.getSeconds())
+        );
 
         let getSunset = new Date(props.data.city.sunset * 1000);
         setSunset(
             addZero(getSunset.getHours()) +
-            ":" +
-            addZero(getSunset.getMinutes()) +
-            ":" +
-            addZero(getSunset.getSeconds()));
+                ':' +
+                addZero(getSunset.getMinutes()) +
+                ':' +
+                addZero(getSunset.getSeconds())
+        );
     }, []);
 
     return (
@@ -73,7 +75,7 @@ export function DetailsWeather(props) {
                         src="https://img.icons8.com/office/16/000000/wind--v1.png"
                         alt="wind"
                     />
-                    <span>{" " + props.weather[0].wind.speed} km/h</span>
+                    <span>{' ' + props.weather[0].wind.speed} km/h</span>
                 </li>
                 <li className="currentWeather--stats__humidity">
                     <span>Humidity</span>
@@ -84,9 +86,9 @@ export function DetailsWeather(props) {
                 <div className="currentWeather--right__img">
                     <img
                         src={
-                            "http://openweathermap.org/img/wn/" +
+                            'http://openweathermap.org/img/wn/' +
                             props.weather[0].weather[0].icon +
-                            "@2x.png"
+                            '@2x.png'
                         }
                         alt="Weather"
                     />

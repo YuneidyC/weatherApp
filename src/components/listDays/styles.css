@@ -12,7 +12,7 @@
     min-width: 500px;
 }
 
-.daily>div:first-child {
+.daily > div:first-child {
     height: 2px;
     background-color: darkgray;
     width: 70%;
