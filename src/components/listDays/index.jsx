@@ -1,42 +1,24 @@
-import React from "react";
-import { Day } from "../Day";
-import { APIContext } from "../../context/ApiContext";
-import ReactLoading from "react-loading";
+import React, { useEffect } from "react";
+
 import './styles.css';
 
-export const ListDays = () => {
-    const { data } = React.useContext(APIContext);
-    let fiveDays = [];
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
-    
-    if (!data) {
-        return (
-            <div className="loading--container">
-                <ReactLoading
-                    type="spinningBubbles"
-                    color="#58a4d5"
-                    height={50}
-                    width={50}
-                    />
-            </div>
-        )
-    }
-    
-    fiveDays.push(data.list[1]);
-    
-    for (let i = 1; i < data.list.length; i++) {
-        const element = data.list[i];
-        const dateToday = today.toISOString().split(/(T+)/)[0];
-        const date = new Date((element.dt_txt).replace(" ", "T"));
-        const arrayDate = new Date((fiveDays[fiveDays.length - 1].dt_txt).replace(" ", "T"));
+export const ListDays = (props) => {
 
-        if (arrayDate.getDay() !== date.getDay()) {
-            if((element.dt_txt).split(/(\s+)/)[0] !== dateToday) {
-                fiveDays.push(element);
+    useEffect(() => {
+        let prevDate = new Date(Date.now()).toISOString().split("T")[0];
+        const days = [...props.fiveDays];
+        for (let i = 0; i < props.weather.length; i++) {
+            const elementDate = props.weather[i].dt_txt.split(" ")[0];
+            if (elementDate !== prevDate) {
+                if (!days.includes(props.weather[i])) {
+                    days.push(props.weather[i]);
+                    props.setFiveDays(days);
+                }
             }
+            prevDate = elementDate;
         }
-    }
+
+    }, [props]);
 
     return (
         <div className="daily">
@@ -44,7 +26,7 @@ export const ListDays = () => {
             <div></div>
             <div className="daily--list__container">
                 <ul className="daily--list">
-                    {fiveDays.map((day, id) => <Day key={id} {...day} />)}
+                    {props.children}
                 </ul>
             </div>
         </div>
