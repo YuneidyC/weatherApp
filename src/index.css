@@ -1,43 +1,39 @@
 :root {
-  --light-mode: linear-gradient(to bottom right, #a6dae4, #58a4d5);
-  --dark-mode: linear-gradient(to bottom right, #020024, #26265e);
+    --light-mode: linear-gradient(to bottom right, #a6dae4, #58a4d5);
+    --dark-mode: linear-gradient(to bottom right, #020024, #26265e);
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
-  width: 100%;
-  height: 100%;
+    font-size: 62.5%;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.6rem;
-  background: linear-gradient(to bottom right, #020024, #26265e);
-  color: white;
-  display: grid;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.6rem;
+    background-color: #010103;
+    color: white;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
-
-.dark-mode {
-  background: linear-gradient(to bottom right, #a6dae4, #58a4d5);
-  color: black;
+.Weather-App {
+    height: auto;
 }
