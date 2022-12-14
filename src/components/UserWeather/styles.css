@@ -1,0 +1,44 @@
+.loading--container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+.currentWeather {
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    width: 600px;
+    height: auto;
+    min-width: 400px;
+    margin: 0 auto;
+    background-image: url('../../assets/images/thunderstorm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 7px 33px -1px rgba(0, 0, 0, 0.9);
+}
+
+.currentWeather h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-align: start;
+    margin: 0 auto;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+    width: auto;
+    padding-right: 200px;
+}
+
+.currentWeather--nav {
+    display: grid;
+    grid-template-columns: 200px 380px;
+    grid-template-rows: 1fr;
+    width: 95%;
+    height: 70px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+}
