@@ -5,7 +5,7 @@ import ReactLoading from 'react-loading';
 import { UserWeather } from './components/UserWeather';
 import { DetailsWeather } from './components/DetailsWeather';
 import { Day } from './components/Day';
-import { ListDays } from './components/listDays';
+import { ListDays } from './components/ListDays';
 import { CurrentWeather } from './components/CurrentWeather';
 
 import cloudsDay from './assets/images/clouds.jpg';
@@ -40,19 +40,23 @@ function App() {
         switch (props.value[0].weather[0].icon) {
             case '01d':
                 background.style.backgroundImage = `url(${clearSkyDay})`;
+                body.style.color = 'white';
                 break;
             case '01n':
                 background.style.backgroundImage = `url(${clearSkyNight})`;
+                body.style.color = 'white';
                 break;
             case '02d':
             case '03d':
             case '04d':
                 background.style.backgroundImage = `url(${cloudsDay})`;
+                body.style.color = 'white';
                 break;
             case '02n':
             case '03n':
             case '04n':
                 background.style.backgroundImage = `url(${cloudsNight})`;
+                body.style.color = 'white';
                 break;
             case '300':
             case '301':
@@ -64,18 +68,23 @@ function App() {
             case '314':
             case '321':
                 background.style.backgroundImage = `url(${drizzle})`;
+                body.style.color = 'white';
                 break;
             case '50d':
                 background.style.backgroundImage = `url(${mist})`;
+                body.style.color = 'white';
                 break;
             case '09d':
                 background.style.backgroundImage = `url(${showerRain})`;
+                body.style.color = 'white';
                 break;
             case '10d':
                 background.style.backgroundImage = `url(${rain})`;
+                body.style.color = 'white';
                 break;
             case '11d':
                 background.style.backgroundImage = `url(${thunderstorm})`;
+                body.style.color = 'white';
                 break;
             case '13d':
                 background.style.backgroundImage = `url(${snowDay})`;
@@ -83,9 +92,11 @@ function App() {
                 break;
             case '13n':
                 background.style.backgroundImage = `url(${snowNight})`;
+                body.style.color = 'white';
                 break;
             default:
                 background.style.backgroundColor = "dimgray";
+                body.style.color = 'white';
                 break;
         }
     }
