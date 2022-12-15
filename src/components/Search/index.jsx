@@ -9,8 +9,7 @@ export const Search = (props) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const cityAndCountryCode = query
-            .split(',')
-            .map((str) => str.replace(/\s/g, ''));
+            .split(',');
 
         if (query) {
             const response = await fetch(
