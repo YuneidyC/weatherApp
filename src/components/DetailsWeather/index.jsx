@@ -16,19 +16,19 @@ export function DetailsWeather(props) {
         let getSunrise = new Date(props.data.city.sunrise * 1000);
         setSunrise(
             addZero(getSunrise.getHours()) +
-                ':' +
-                addZero(getSunrise.getMinutes()) +
-                ':' +
-                addZero(getSunrise.getSeconds())
+            ':' +
+            addZero(getSunrise.getMinutes()) +
+            ':' +
+            addZero(getSunrise.getSeconds())
         );
 
         let getSunset = new Date(props.data.city.sunset * 1000);
         setSunset(
             addZero(getSunset.getHours()) +
-                ':' +
-                addZero(getSunset.getMinutes()) +
-                ':' +
-                addZero(getSunset.getSeconds())
+            ':' +
+            addZero(getSunset.getMinutes()) +
+            ':' +
+            addZero(getSunset.getSeconds())
         );
     }, []);
 
