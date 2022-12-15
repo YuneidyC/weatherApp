@@ -1,8 +1,3 @@
-:root {
-    --light-mode: linear-gradient(to bottom right, #a6dae4, #58a4d5);
-    --dark-mode: linear-gradient(to bottom right, #020024, #26265e);
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -11,27 +6,20 @@
 
 html {
     font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
-    background-color: #010103;
+    background-color: rgb(22, 22, 22);
     color: white;
     display: grid;
     align-items: center;
     width: 100%;
     height: 100vh;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
 }
 
 .Weather-App {
