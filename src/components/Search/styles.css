@@ -1,13 +1,13 @@
 .Search {
-    width: 150px;
+    width: 130px;
     height: 30px;
-    justify-self: center;
+    justify-self: start;
     align-self: center;
 }
 
 .Search__container {
     position: absolute;
-    transform: translate(20px, 2px);
+    transform: translate(9px, 2px);
 }
 
 .Search__container__box input[type='text'] {

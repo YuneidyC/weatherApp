@@ -1,6 +1,6 @@
 .currentWeather--details__sun {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 110px;
     grid-template-rows: repeat(2, 50px);
     justify-content: center;
     align-self: center;
@@ -13,9 +13,10 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 30px 65px;
     grid-template-rows: 1fr;
     width: 180px;
+    margin-left: 10px;
 }
 
 .currentWeather--details__sun-sunrise__time,
@@ -35,7 +36,7 @@
 .currentWeather--details {
     display: grid;
     justify-content: center;
-    grid-template-columns: 200px 166px 200px;
+    grid-template-columns: 180px 186px 180px;
     grid-template-rows: 1fr;
     margin: 0 auto;
     width: 95%;
@@ -103,6 +104,8 @@
 .currentWeather--stats__humidity {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    justify-self: end;
+    margin-right: 24px;
 }
 
 .curreWeather--right {
