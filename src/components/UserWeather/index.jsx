@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 
 import { Search } from '../Search';
 
-import './styles.css';
-
 export const UserWeather = (props) => {
     useEffect(() => {
         fetch(
