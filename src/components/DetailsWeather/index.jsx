@@ -58,7 +58,7 @@ export function DetailsWeather(props) {
             </div>
             <div className="currentWeather--details__current">
                 <span className="currentWeather--details__current-temp">
-                    {props.weather[0].main.temp}°
+                    {Math.round(props.weather[0].main.temp)}°
                 </span>
                 <span className="currentWeather--details__current-desc">
                     {props.weather[0].weather[0].description}
@@ -67,7 +67,7 @@ export function DetailsWeather(props) {
             <ul className="currentWeather--stats">
                 <li className="currentWeather--stats__feels-like">
                     <span>Feels like </span>
-                    <span>{props.weather[0].main.feels_like}°</span>
+                    <span>{Math.round(props.weather[0].main.feels_like)}°</span>
                 </li>
                 <li className="currentWeather--stats__wind">
                     <span>Wind </span>
@@ -95,10 +95,10 @@ export function DetailsWeather(props) {
                 </div>
                 <div className="currentWeather--temperature">
                     <div className="currentWeather--temperature__high">
-                        <span>{props.weather[0].main.temp_max}°</span>
+                        <span>{Math.round(props.weather[0].main.temp_max)}°</span>
                     </div>
                     <div className="currentWeather--temperature__low">
-                        <span>{props.weather[0].main.temp_min}°</span>
+                        <span>{Math.round(props.weather[0].main.temp_min)}°</span>
                     </div>
                 </div>
             </div>

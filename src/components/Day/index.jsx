@@ -56,10 +56,10 @@ export const Day = (props) => {
             <img className="day--weather" src={iconLink} alt="" />
             <div className="temperature--container">
                 <div className="temperature--container__high">
-                    <span>{props.day.main.temp_max}°</span>
+                    <span>{Math.round(props.day.main.temp_max)}°</span>
                 </div>
                 <div className="temperature--container__low">
-                    <span>{props.day.main.temp_min}°</span>
+                    <span>{Math.round(props.day.main.temp_min)}°</span>
                 </div>
             </div>
         </li>
