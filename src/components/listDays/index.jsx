@@ -21,7 +21,6 @@ export const ListDays = (props) => {
     return (
         <div className="daily">
             <p className="daily--next-days">Next Days</p>
-            <div></div>
             <div className="daily--list__container">
                 <ul className="daily--list">{props.children}</ul>
             </div>

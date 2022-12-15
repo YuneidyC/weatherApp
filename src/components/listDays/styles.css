@@ -1,6 +1,6 @@
 .daily {
     min-width: 500px;
-    margin: 30px auto;
+    margin: 0 auto 30px;
 }
 
 .daily--next-days {
@@ -8,16 +8,7 @@
     justify-content: center;
     align-self: center;
     font-size: 2rem;
-    margin: 20px 0 10px;
-    min-width: 500px;
-}
-
-.daily > div:first-child {
-    height: 2px;
-    background-color: darkgray;
-    width: 70%;
-    position: relative;
-    margin: 0 auto 30px;
+    margin: 15px auto;
     min-width: 500px;
 }
 
