@@ -1,3 +1,7 @@
+:root {
+    --transition: 0.25s;
+}
+
 .Search {
     width: 130px;
     height: 30px;
@@ -16,7 +20,7 @@
     z-index: 1;
     width: 20px;
     height: 30px;
-    transition: all 0.25s ease-in 0.25s;
+    transition: all var(--transition) ease-in var(--transition);
     color: transparent;
     font-size: 0.75rem;
     line-height: 25px;
@@ -75,8 +79,4 @@
     border-radius: 5px;
     background: white;
     transform: rotate(45deg) translate(20px, -2px);
-}
-
-.currentWeather--nav-search__span {
-    color: red;
 }

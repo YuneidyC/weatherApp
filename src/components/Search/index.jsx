@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import './styles.css';
 
 export const Search = (props) => {
     const [query, setQuery] = useState(false);
     const [error, setError] = useState(false);
+    const [isFocused, setIsFocused] = useState('');
+    const ref = useRef(null);
+
+    useEffect(() => {
+        ref.current.placeholder = isFocused;
+      }, [isFocused]);
+
+      function setIsFocusedDelayed(params) {
+        const root = getComputedStyle(document.body);
+        setTimeout(() => setIsFocused(params), root.getPropertyValue('--transition').match(/[\d\.]+|\D+/g)[0] * 1000);
+      }
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -36,8 +47,10 @@ export const Search = (props) => {
                     <input
                         id="input"
                         type="text"
-                        placeholder="e.g. London, GB"
                         onChange={(e) => setQuery(e.target.value)}
+                        ref={ref}
+                        onFocus={() => setIsFocusedDelayed('e.g. London, GB')}
+                        onBlur={() => setIsFocused('')}
                     />
                     <span></span>
                 </div>
