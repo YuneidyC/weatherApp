@@ -17,18 +17,14 @@ export function DetailsWeather(props) {
         setSunrise(
             addZero(getSunrise.getHours()) +
             ':' +
-            addZero(getSunrise.getMinutes()) +
-            ':' +
-            addZero(getSunrise.getSeconds())
+            addZero(getSunrise.getMinutes())
         );
 
         let getSunset = new Date(props.data.city.sunset * 1000);
         setSunset(
             addZero(getSunset.getHours()) +
             ':' +
-            addZero(getSunset.getMinutes()) +
-            ':' +
-            addZero(getSunset.getSeconds())
+            addZero(getSunset.getMinutes())
         );
     }, []);
 
@@ -66,11 +62,11 @@ export function DetailsWeather(props) {
             </div>
             <ul className="currentWeather--stats">
                 <li className="currentWeather--stats__feels-like">
-                    <span>Feels like </span>
+                    <span>Feels like: </span>
                     <span>{Math.round(props.weather[0].main.feels_like)}°</span>
                 </li>
                 <li className="currentWeather--stats__wind">
-                    <span>Wind </span>
+                    <span>Wind: </span>
                     <img
                         src="https://img.icons8.com/office/16/000000/wind--v1.png"
                         alt="wind"
@@ -78,8 +74,8 @@ export function DetailsWeather(props) {
                     <span>{' ' + props.weather[0].wind.speed} km/h</span>
                 </li>
                 <li className="currentWeather--stats__humidity">
-                    <span>Humidity</span>
-                    <span> {props.weather[0].main.humidity}%</span>
+                    <span>Humidity: </span>
+                    <span>{props.weather[0].main.humidity}%</span>
                 </li>
             </ul>
             <div className="curreWeather--right">
@@ -88,7 +84,7 @@ export function DetailsWeather(props) {
                         src={
                             'http://openweathermap.org/img/wn/' +
                             props.weather[0].weather[0].icon +
-                            '@2x.png'
+                            '.png'
                         }
                         alt="Weather"
                     />
