@@ -84,7 +84,7 @@ export function DetailsWeather(props) {
                         src={
                             'http://openweathermap.org/img/wn/' +
                             props.weather[0].weather[0].icon +
-                            '.png'
+                            '@2x.png'
                         }
                         alt="Weather"
                     />
