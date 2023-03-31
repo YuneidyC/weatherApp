@@ -27,7 +27,7 @@ export const Day = (props) => {
         'Dec',
     ];
     const iconLink =
-        'http://openweathermap.org/img/wn/' +
+        'https://openweathermap.org/img/wn/' +
         props.day.weather[0].icon +
         '@2x.png';
 

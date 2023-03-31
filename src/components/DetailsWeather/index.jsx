@@ -86,7 +86,7 @@ export function DetailsWeather(props) {
                 <div className="currentWeather--right__img">
                     <img
                         src={
-                            'http://openweathermap.org/img/wn/' +
+                            'https://openweathermap.org/img/wn/' +
                             props.weather[0].weather[0].icon +
                             '@2x.png'
                         }
