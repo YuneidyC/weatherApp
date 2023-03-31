@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
+import sunsetImg from '../../assets/icons/sunset.png';
+import sunriseImg from '../../assets/icons/sunrise.png';
+import windImg from '../../assets/icons/wind.png';
+
 export function DetailsWeather(props) {
     const [sunrise, setSunrise] = useState('');
     const [sunset, setSunset] = useState('');
@@ -34,7 +38,7 @@ export function DetailsWeather(props) {
                 <div className="currentWeather--details__sun-sunrise">
                     <img
                         className="currentWeather--details__sun-sunrise__img"
-                        src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunrise-weather-tulpahn-flat-tulpahn.png"
+                        src={sunriseImg}
                         alt="sunrise"
                     />
                     <span className="currentWeather--details__sun-sunrise__time">
@@ -44,7 +48,7 @@ export function DetailsWeather(props) {
                 <div className="currentWeather--details__sun-sunset">
                     <img
                         className="currentWeather--details__sun-sunset__img"
-                        src="https://img.icons8.com/external-tulpahn-flat-tulpahn/64/000000/external-sunset-weather-tulpahn-flat-tulpahn.png"
+                        src={sunsetImg}
                         alt="sunset"
                     />
                     <span className="currentWeather--details__sun-sunset__time">
@@ -68,7 +72,7 @@ export function DetailsWeather(props) {
                 <li className="currentWeather--stats__wind">
                     <span>Wind: </span>
                     <img
-                        src="https://img.icons8.com/office/16/000000/wind--v1.png"
+                        src={windImg}
                         alt="wind"
                     />
                     <span>{' ' + props.weather[0].wind.speed} km/h</span>
