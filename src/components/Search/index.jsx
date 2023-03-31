@@ -51,6 +51,7 @@ export const Search = (props) => {
                         ref={ref}
                         onFocus={() => setIsFocusedDelayed('e.g. London, GB')}
                         onBlur={() => setIsFocused('')}
+                        aria-label="lorem ipsum"
                     />
                     <span></span>
                 </div>
