@@ -1,3 +1,8 @@
+:root {
+    --textColor: white;
+    --transition: 0.25s;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,7 +11,16 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pacifico Regular'), local('Pacifico-Regular'),
+      url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+        format('woff2');
+    font-display: swap;
 }
 
 body {
@@ -15,7 +29,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
     background-color: rgb(22, 22, 22);
-    color: white;
+    color: var(--textColor);
     display: grid;
     align-items: center;
     width: 100%;
