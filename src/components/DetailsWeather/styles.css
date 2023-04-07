@@ -101,6 +101,11 @@
     grid-row: 2 / 3;
 }
 
+.currentWeather--stats__wind img {
+    width: 16px;
+    height: 16px;
+}
+
 .currentWeather--stats__humidity {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
@@ -127,8 +132,8 @@
 }
 
 .currentWeather--right__img img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 .currentWeather--temperature {
