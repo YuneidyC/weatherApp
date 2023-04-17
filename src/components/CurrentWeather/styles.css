@@ -14,7 +14,7 @@
     min-width: 400px;
     margin: 0 auto;
     background-repeat: no-repeat;
-    background-size: 600px 780px;
+    background-size: cover;
     box-shadow: 0 7px 33px -1px rgba(0, 0, 0, 0.9);
     resize: both;
 }
