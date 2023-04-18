@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useGeolocated } from 'react-geolocated';
 import ReactLoading from 'react-loading';
 
-import { UserWeather } from './components/UserWeather';
 import { DetailsWeather } from './components/DetailsWeather';
 import { Day } from './components/Day';
 import { ListDays } from './components/ListDays';
@@ -101,8 +100,9 @@ function App() {
         search.lastChild.style.setProperty('--textColor', color);
     }
 
-    return !isGeolocationEnabled ? (
+    return !isGeolocationEnabled || coords ? (
         <CurrentWeather
+            coords={coords}
             weather={weather}
             setWeather={setWeather}
             data={data}
@@ -127,34 +127,6 @@ function App() {
                 </div>
             )}
         </CurrentWeather>
-    ) : coords ? (
-        <UserWeather
-            latitude={coords.latitude}
-            longitude={coords.longitude}
-            weather={weather}
-            setWeather={setWeather}
-            data={data}
-            setData={setData}
-            setFiveDays={setFiveDays}
-            SwitchCase={SwitchCase}>
-            {weather.length > 0 && (
-                <div className="Weather-App">
-                    <SwitchCase value={weather} />
-                    <DetailsWeather
-                        data={data}
-                        weather={weather}>
-                    </DetailsWeather>
-                    <ListDays
-                        weather={weather}
-                        fiveDays={fiveDays}
-                        setFiveDays={setFiveDays}>
-                        {fiveDays.map((day, keyDay) => (
-                            <Day day={day} key={keyDay} />
-                        ))}
-                    </ListDays>
-                </div>
-            )}
-        </UserWeather>
     ) : (
         <div className="loading--container">
             <ReactLoading
@@ -162,6 +134,7 @@ function App() {
                 color="#58a4d5"
                 height={50}
                 width={50}
+                delay={3}
             />
         </div>
     );

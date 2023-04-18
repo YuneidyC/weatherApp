@@ -6,9 +6,13 @@ import './styles.css';
 
 export const CurrentWeather = (props) => {
     useEffect(() => {
-        fetch(
-            `${process.env.REACT_APP_API}?q=London,GB&appid=${process.env.REACT_APP_API_KEY}&units=metric`
-        )
+        let request;
+        if (props.coords) {
+            request = `${process.env.REACT_APP_API}?lat=${props.coords.latitude}&lon=${props.coords.longitude}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
+        } else {
+            request = `${process.env.REACT_APP_API}?q=London,GB&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
+        }
+        fetch(request)
             .then((res) => res.json())
             .then((res) => {
                 props.setData(res);
