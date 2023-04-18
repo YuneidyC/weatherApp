@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# **Weather app**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [**Weather app**](#weather-app)
+  - [**About the project**](#about-the-project)
+  - [**Lighthouse rating**](#lighthouse-rating)
+  - [**Tech stack**](#tech-stack)
+  - [**Getting started**](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Run/Test](#runtest)
+  - [**Showcase**](#showcase)
+    - [Block location](#block-location)
+    - [Allow location](#allow-location)
+    - [Search locations](#search-locations)
 
-## Available Scripts
+## **About the project**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+This project was developed to learn how to request information from a REST API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Lighthouse rating**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+![LighthouseRating](./docs/imgs/lighthouse-weatherApp.PNG)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Tech stack**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- markdownlint-disable MD033 -->
+<p>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Html5" width="40" height="40" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="Css3" width="40" height="40" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/javascript" >
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
+    </a>
+    <a href="https://reactjs.org/" >
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" />
+    </a>
+    <a href="https://webpack.js.org/" >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="Webpack" width="40" height="40" />
+    </a>
+    <a href="https://babeljs.io/" >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" alt="Babel" width="50" height="50" />
+    </a>
+    <a href="https://eslint.org/" >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original-wordmark.svg" alt="Eslint" width="50" height="50" />
+    </a>
+    <a href="https://git-scm.com/" >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
+            alt="Eslint" width="50" height="50" />
+    </a>
+</p>
+<!-- markdownlint-enable MD033 -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **Getting started**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+|     | Version | Installation                |
+| --- | ------- | --------------------------- |
+| npm | 9.6.4+  | `npm install npm@latest -g` |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Run/Test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Step 1:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone git@github.com:YuneidyC/todo-app.git # Clone the repo
+npm install # Install NPM packages
+```
 
-## Learn More
+**Step 2:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Create an account at [**OpenWeather**](https://openweathermap.org/).
+- Go to `Profile > My API keys`.
+- Create a new key:
+  - (Optional) Write a new name for your key.
+  - Click `Generate`.
+- **Check the status column and make sure that the new key is active**.
+- Copy the key.
+- Open `.env.example`, replace `<YOUR_API_KEY>` with your key and save.
+- Rename the file `.env.example` to `.env.local`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Step 3:**
 
-### Code Splitting
+Open bash or powershell in the root of the repository and execute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run start # Run the app
+```
 
-### Analyzing the Bundle Size
+## **Showcase**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### Block location
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![BlockLocation](./docs/imgs/block-location.gif)
 
-### Advanced Configuration
+### Allow location
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![AllowLocation](./docs/imgs/allow-location.gif)
 
-### Deployment
+### Search locations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![SearchLocations](./docs/imgs/search-location.gif)
