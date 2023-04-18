@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
-import sunsetImg from '../../assets/icons/sunset.png';
-import sunriseImg from '../../assets/icons/sunrise.png';
-import windImg from '../../assets/icons/wind.png';
+import sunsetImg from '@icons/sunset.png';
+import sunriseImg from '@icons/sunrise.png';
+import windImg from '@icons/wind.png';
 
 export function DetailsWeather(props) {
     const [sunrise, setSunrise] = useState('');

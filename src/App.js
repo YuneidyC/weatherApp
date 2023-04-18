@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import { useGeolocated } from 'react-geolocated';
 import ReactLoading from 'react-loading';
 
-import { DetailsWeather } from './components/DetailsWeather';
-import { Day } from './components/Day';
-import { ListDays } from './components/ListDays';
-import { CurrentWeather } from './components/CurrentWeather';
+import { DetailsWeather } from '@components/DetailsWeather';
+import { Day } from '@components/Day';
+import { ListDays } from '@components/ListDays';
+import { CurrentWeather } from '@components/CurrentWeather';
 
-import cloudsDay from './assets/images/clouds.jpg';
-import cloudsNight from './assets/images/cloudsNight.jpg';
-import rain from './assets/images/rain.jpg';
-import mist from './assets/images/mist.jpg';
-import drizzle from './assets/images/drizzle.jpg';
-import snowDay from './assets/images/snowDay.jpg';
-import snowNight from './assets/images/snowNight.jpg';
-import thunderstorm from './assets/images/thunderstorm.jpg';
-import clearSkyDay from './assets/images/clearSkyDay.jpg';
-import clearSkyNight from './assets/images/clearSkyNight.jpg';
+import cloudsDay from '@images/clouds.jpg';
+import cloudsNight from '@images/cloudsNight.jpg';
+import rain from '@images/rain.jpg';
+import mist from '@images/mist.jpg';
+import drizzle from '@images/drizzle.jpg';
+import snowDay from '@images/snowDay.jpg';
+import snowNight from '@images/snowNight.jpg';
+import thunderstorm from '@images/thunderstorm.jpg';
+import clearSkyDay from '@images/clearSkyDay.jpg';
+import clearSkyNight from '@images/clearSkyNight.jpg';
 
 function App() {
     const [weather, setWeather] = useState([]);

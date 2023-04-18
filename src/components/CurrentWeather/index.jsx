@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Search } from '../Search';
+import { Search } from '@components/Search';
 
 import './styles.css';
 
