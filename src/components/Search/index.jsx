@@ -10,17 +10,20 @@ export const Search = (props) => {
 
     useEffect(() => {
         ref.current.placeholder = isFocused;
-      }, [isFocused]);
+    }, [isFocused]);
 
-      function setIsFocusedDelayed(params) {
+    function setIsFocusedDelayed(params) {
         const root = getComputedStyle(document.body);
-        setTimeout(() => setIsFocused(params), root.getPropertyValue('--transition').match(/[\d\.]+|\D+/g)[0] * 1000);
-      }
+        setTimeout(
+            () => setIsFocused(params),
+            root.getPropertyValue('--transition').match(/[\d\.]+|\D+/g)[0] *
+                1000
+        );
+    }
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const cityAndCountryCode = query
-            .split(',');
+        const cityAndCountryCode = query.split(',');
 
         if (query) {
             const response = await fetch(

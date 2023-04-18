@@ -20,15 +20,15 @@ export function DetailsWeather(props) {
         let getSunrise = new Date(props.data.city.sunrise * 1000);
         setSunrise(
             addZero(getSunrise.getHours()) +
-            ':' +
-            addZero(getSunrise.getMinutes())
+                ':' +
+                addZero(getSunrise.getMinutes())
         );
 
         let getSunset = new Date(props.data.city.sunset * 1000);
         setSunset(
             addZero(getSunset.getHours()) +
-            ':' +
-            addZero(getSunset.getMinutes())
+                ':' +
+                addZero(getSunset.getMinutes())
         );
     }, []);
 
@@ -71,10 +71,7 @@ export function DetailsWeather(props) {
                 </li>
                 <li className="currentWeather--stats__wind">
                     <span>Wind: </span>
-                    <img
-                        src={windImg}
-                        alt="wind"
-                    />
+                    <img src={windImg} alt="wind" />
                     <span>{' ' + props.weather[0].wind.speed} km/h</span>
                 </li>
                 <li className="currentWeather--stats__humidity">
@@ -95,10 +92,14 @@ export function DetailsWeather(props) {
                 </div>
                 <div className="currentWeather--temperature">
                     <div className="currentWeather--temperature__high">
-                        <span>{Math.round(props.weather[0].main.temp_max)}°</span>
+                        <span>
+                            {Math.round(props.weather[0].main.temp_max)}°
+                        </span>
                     </div>
                     <div className="currentWeather--temperature__low">
-                        <span>{Math.round(props.weather[0].main.temp_min)}°</span>
+                        <span>
+                            {Math.round(props.weather[0].main.temp_min)}°
+                        </span>
                     </div>
                 </div>
             </div>

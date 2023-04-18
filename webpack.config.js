@@ -18,7 +18,7 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@icons': path.resolve(__dirname, 'src/assets/icons'),
             '@images': path.resolve(__dirname, 'src/assets/images'),
-        }
+        },
     },
     mode: 'development',
     module: {
@@ -27,14 +27,14 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader'
-                }
+                    loader: 'babel-loader',
+                },
             },
             {
                 test: /\.html$/,
                 use: {
-                    loader: 'html-loader'
-                }
+                    loader: 'html-loader',
+                },
             },
             {
                 test: /\.css$/,
@@ -42,25 +42,25 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                     },
-                'css-loader'
+                    'css-loader',
                 ],
             },
             {
                 test: /\.(jpg|png)$/,
                 use: {
-                    loader: 'file-loader'
-                }
-            }
-        ]
+                    loader: 'file-loader',
+                },
+            },
+        ],
     },
     plugins: [
-        new HtmlWebpackPlugin( {
+        new HtmlWebpackPlugin({
             inject: true,
             template: './public/index.html',
-            filename: './index.html'
+            filename: './index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css'
+            filename: '[name].css',
         }),
         new Dotenv({
             path: './.env.local',
@@ -71,18 +71,15 @@ module.exports = {
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, "dist"),
+            directory: path.join(__dirname, 'dist'),
         },
         compress: true,
         historyApiFallback: true,
-        port: 3000
+        port: 3000,
     },
     optimization: {
         minimize: true,
-        minimizer: [
-          new CssMinimizerPlugin(),
-          new TerserPlugin(),
-        ]
+        minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     },
     performance: {
         hints: false,
@@ -90,4 +87,4 @@ module.exports = {
     stats: {
         errorDetails: false,
     },
-}
+};

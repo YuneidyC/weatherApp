@@ -9,9 +9,9 @@ import { CurrentWeather } from './components/CurrentWeather';
 
 import cloudsDay from './assets/images/clouds.jpg';
 import cloudsNight from './assets/images/cloudsNight.jpg';
-import rain from './assets/images/rain.jpg'
-import mist from './assets/images/mist.jpg'
-import drizzle from './assets/images/drizzle.jpg'
+import rain from './assets/images/rain.jpg';
+import mist from './assets/images/mist.jpg';
+import drizzle from './assets/images/drizzle.jpg';
 import snowDay from './assets/images/snowDay.jpg';
 import snowNight from './assets/images/snowNight.jpg';
 import thunderstorm from './assets/images/thunderstorm.jpg';
@@ -32,11 +32,17 @@ function App() {
 
     function SwitchCase(props) {
         const background = document.getElementsByClassName('currentWeather')[0];
-        const search = document.getElementsByClassName('Search__container__box')[0];
+        const search = document.getElementsByClassName(
+            'Search__container__box'
+        )[0];
         const body = document.getElementsByTagName('body')[0];
 
         if (search) {
-            changeColorSearchAndBody(search, props.value[0].weather[0].icon, body);
+            changeColorSearchAndBody(
+                search,
+                props.value[0].weather[0].icon,
+                body
+            );
         }
 
         switch (props.value[0].weather[0].icon) {
@@ -88,9 +94,9 @@ function App() {
     function changeColorSearchAndBody(search, caseImage, body) {
         let color;
         if (caseImage === '13d') {
-            color = "black";
+            color = 'black';
         } else {
-            color = "white";
+            color = 'white';
         }
 
         body.style.color = color;
@@ -114,8 +120,7 @@ function App() {
                     <SwitchCase value={weather} />
                     <DetailsWeather
                         data={data}
-                        weather={weather}>
-                    </DetailsWeather>
+                        weather={weather}></DetailsWeather>
                     <ListDays
                         weather={weather}
                         fiveDays={fiveDays}
