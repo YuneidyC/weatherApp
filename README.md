@@ -73,7 +73,7 @@ This project was developed to learn how to request information from a REST API.
 **Step 1:**
 
 ```bash
-git clone git@github.com:YuneidyC/todo-app.git # Clone the repo
+git clone git@github.com:YuneidyC/weatherApp.git # Clone the repo
 npm install # Install NPM packages
 ```
 
