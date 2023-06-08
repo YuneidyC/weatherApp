@@ -1,8 +1,8 @@
-# **Weather app**
+# Weather app
 
 - [**Weather app**](#weather-app)
   - [**About the project**](#about-the-project)
-  - [**Lighthouse rating**](#lighthouse-rating)
+  - [**Lighthouse**](#lighthouse)
   - [**Tech stack**](#tech-stack)
   - [**Getting started**](#getting-started)
     - [Prerequisites](#prerequisites)
@@ -12,21 +12,11 @@
     - [Allow location](#allow-location)
     - [Search locations](#search-locations)
 
-## **About the project**
-
----
+## About the project
 
 This project was developed to learn how to request information from a REST API.
 
-## **Lighthouse rating**
-
----
-
-![LighthouseRating](./docs/imgs/lighthouse-weatherApp.PNG)
-
-## **Tech stack**
-
----
+## Tech stack
 
 <!-- markdownlint-disable MD033 -->
 <p>
@@ -58,9 +48,12 @@ This project was developed to learn how to request information from a REST API.
 </p>
 <!-- markdownlint-enable MD033 -->
 
-## **Getting started**
 
----
+## Lighthouse
+
+![LighthouseRating](./docs/imgs/lighthouse-weatherApp.PNG)
+
+## Getting started
 
 ### Prerequisites
 
@@ -97,9 +90,7 @@ Open bash or powershell in the root of the repository and execute:
 npm run start # Run the app
 ```
 
-## **Showcase**
-
----
+## Showcase
 
 ### Block location
 
